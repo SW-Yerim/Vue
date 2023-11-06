@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vue Basics</title>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://unpkg.com/vue@next" defer></script>
+  <script src="app.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <h1>Vue Dynamic Styling</h1>
+  </header>
+  <section id="styling">
+    <!-- 
+    <div class="demo" :style="{borderColor: boxASelected ? 'red' : '#ccc'}" @click="boxSelected('A')"></div>
+    <div class="demo" :style="{borderColor: boxBSelected ? 'blue' : '#ccc'}" @click="boxSelected('B')"></div>
+    <div class="demo" :style="{borderColor: boxCSelected ? 'green' : '#ccc'}" @click="boxSelected('C')"></div>
+     -->
+
+    <!--      
+    <div :class="boxASelected ? 'demo active red' : 'demo'" @click="boxSelected('A')"></div>
+    <div :class="boxBSelected ? 'demo active blue' : 'demo'" @click="boxSelected('B')"></div>
+    <div :class="boxCSelected ? 'demo active green' : 'demo'" @click="boxSelected('C')"></div>
+     -->
+
+    <!-- 
+    <div :class="{demo: true, active: boxASelected, red: boxASelected}" @click="boxSelected('A')"></div>
+    <div :class="{demo: true, active: boxBSelected, blue: boxBSelected}" @click="boxSelected('B')"></div>
+    <div :class="{demo: true, active: boxCSelected, green: boxCSelected}" @click="boxSelected('C')"></div>
+     -->
+
+    <!-- 
+    <div class="demo" :class="{active: boxASelected, red: boxASelected}" @click="boxSelected('A')"></div>
+    <div class="demo" :class="{active: boxBSelected, blue: boxBSelected}" @click="boxSelected('B')"></div>
+    <div class="demo" :class="{active: boxCSelected, green: boxCSelected}" @click="boxSelected('C')"></div>
+     -->
+
+    <!--
+     <div class="demo" :class="boxAClasses" @click="boxSelected('A')"></div>
+     <div class="demo" :class="boxBClasses" @click="boxSelected('B')"></div>
+     <div class="demo" :class="boxCClasses" @click="boxSelected('C')"></div>
+     -->
+
+    <div :class="['demo', {active: boxAClasses}, {red: boxAClasses}]" @click="boxSelected('A')"></div>
+    <div :class="['demo', {active: boxBClasses}, {blue: boxBClasses}]" @click="boxSelected('B')"></div>
+    <div :class="['demo', {active: boxCClasses}, {green: boxCClasses}]" @click="boxSelected('C')"></div>
+
+    <button @click="boxReset">Reset</button>
+  </section>
+</body>
+
+</html>
